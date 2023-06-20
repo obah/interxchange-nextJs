@@ -2,26 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* background-color: #0c1021; */
+  background: linear-gradient(-45deg, #6fb4c2 -30%, transparent 80%),
+    linear-gradient(45deg, #8782ae 20%, #210c46, #3b1d59, 60%, #0c1021, #9a539a);
+  color: #fff;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+h2 {
+  @apply font-bold sm:text-5xl text-3xl;
+}
+
+.home-p,
+label {
+  @apply font-normal sm:text-2xl text-lg;
+}
+
+h3 {
+  @apply font-bold sm:text-2xl text-lg;
+}
+
+::selection {
+  @apply bg-yellow-200 text-black;
+}
+
+.primary-btn {
+  @apply text-black bg-yellow-200 font-bold sm:p-4 py-4 px-16 rounded-lg sm:text-2xl text-lg text-center;
+  @apply transition ease-in-out delay-75 hover:rounded-full hover:bg-yellow-300;
+}
+
+.card {
+  border-radius: 32px;
+  @apply border-2 mb-4 w-2/5 mx-auto;
+}
+
+.card button {
+  margin-right: -25px;
+}
+
+.data-box {
+  @apply border-2 rounded-3xl p-5 w-2/5;
+}
+
+.data-box h1 {
+  @apply font-bold text-3xl mb-10;
+}
+
+.data-box p {
+  @apply font-light text-2xl;
+}
+
+.table-box {
+  @apply border-2 rounded-3xl p-5 w-2/5;
+}
+
+.table-box h1 {
+  @apply font-bold text-3xl mb-7;
+}
+
+.table-box tbody tr {
+  @apply border-t;
+}
+
+.table-box tr td {
+  @apply text-sm py-5 px-4;
+}
+
+.table-box thead {
+  @apply font-normal text-xs;
+}
+
+.supply-btn a {
+  @apply text-black bg-yellow-200 hover:bg-yellow-300 rounded-3xl px-4 py-2;
+}
+
+.claim-btn a {
+  @apply text-black bg-white hover:bg-gray-300 rounded-3xl px-6 py-2;
+}
+
+.disabled-btn a {
+  @apply text-black bg-yellow-100 hover:cursor-not-allowed rounded-3xl px-4 py-2;
+}
+
+/* more mobile styles */
+@media screen and (max-width: 768px) {
+  body {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  h1,
+  p,
+  h2,
+  h3 {
+    @apply text-center;
+  }
+
+  .heroImg,
+  .top-section h1 {
+    @apply hidden;
+  }
+
+  .logo {
+    filter: brightness(70%);
+    @apply block w-60 h-60 absolute ml-28 mt-10 z-0;
+  }
+
+  .mbr {
+    @apply flex justify-center;
+  }
+
+  .card {
+    height: 100px;
+    @apply w-4/5 rounded-2xl;
+  }
+
+  .card img {
+    @apply w-2/5 h-24;
+  }
+
+  .cardText {
+    @apply w-3/5 pr-2;
+  }
+
+  .card button {
+    @apply hidden;
+  }
 }
