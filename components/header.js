@@ -2,9 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Header({ show }) {
+  const [wallet, setWallet] = useState("connect");
   const path = usePathname();
+
+  const handleConnect = () => {
+    if (wallet === "connect") {
+      setWallet("0x79B0…4E71");
+    } else {
+      setWallet("connect");
+    }
+  };
 
   const inactiveLink = "font-bold text-3xl sm:text-4xl hover:text-yellow-300";
   const activeLink = inactiveLink + " underline";
@@ -24,7 +34,9 @@ export default function Header({ show }) {
           >
             InterXchange
           </Link>
-          <button className="primary-btn">connect</button>
+          <button onClick={handleConnect} className="primary-btn">
+            {wallet}
+          </button>
         </div>
         <div>
           <nav className="flex justify-between w-2/3 mx-auto">
