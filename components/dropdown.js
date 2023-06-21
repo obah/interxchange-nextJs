@@ -20,8 +20,8 @@ export default function Dropdown({ label, options, onClick }) {
   const openedDrop = closedDrop + " hidden";
 
   return (
-    <div className="flex flex-col sm:mb-14 mb-10">
-      <div className="flex justify-between items-center border-2 p-3 sm:w-80 w-40 h-16 sm:h-auto">
+    <div className="flex flex-col sm:mb-14">
+      <div className="flex justify-between items-center border-2 p-3 sm:w-80 w-30 sm:h-16 sm:h-10">
         <p className="home-p">{label}</p>
         <button
           onClick={handleDropdown}
@@ -30,11 +30,11 @@ export default function Dropdown({ label, options, onClick }) {
           <Image
             src={Arrow}
             alt=""
-            className={!isOpen ? "rotate-180" : "rotate-0"}
+            className={(!isOpen ? "rotate-180" : "rotate-0") + " dropdown-btn"}
           />
         </button>
       </div>
-      <div className="sm:w-80 w-40  border-2 border-t-0 bg-black">
+      <div className="sm:w-80 w-30  border-2 border-t-0 bg-black">
         {options.map((option) => (
           <button
             value={option}

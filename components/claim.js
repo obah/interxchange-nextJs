@@ -5,8 +5,8 @@ import eth from "@/images/eth.png";
 import usdc from "@/images/usdc.png";
 
 export default function Claim({ close }) {
-  const h2Style = "font-light text-2xl mb-2";
-  const pStyle = "font-extrabold text-3xl";
+  const h2Style = "font-light sm:text-2xl text-lg mb-2";
+  const pStyle = "sm:font-extrabold font-bold sm:text-3xl text-lg";
   const mifp = "flex flex-col items-center gap-1";
 
   return (
@@ -18,12 +18,12 @@ export default function Claim({ close }) {
         <h1 className="font-bold text-3xl">Claim</h1>
         <h2 className={h2Style}>ETH/USDC</h2>
       </div>
-      <div className="flex gap-10 justify-center my-36">
+      <div className="flex gap-5 sm:gap-10 justify-center my-36">
         <div className="flex flex-col items-center">
           <Image src={bayc} alt="" width={80} height={80} />
           <p className={h2Style}>BAYC</p>
         </div>
-        <div className="w-1/2 flex flex-wrap gap-8">
+        <div className="w-1/2 flex flex-wrap gap-3 sm:gap-8">
           <div className={mifp}>
             <h2 className={h2Style}>Worth</h2>
             <div className="flex gap-2">

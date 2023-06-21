@@ -53,20 +53,22 @@ export default function page() {
   };
 
   return (
-    <div className="mt-20 m-32">
+    <div className="sm:mt-20 sm:m-32 m-10">
       {/* stats section */}
       <div className="flex justify-between items-center">
-        <div className="flex gap-10 items-center -mt-20">
-          <div className="flex gap-5 items-center h-14">
-            <Image src={Currency} alt="currency logo" />
+        <div className="flex sm:gap-10 gap-3 items-center sm:-mt-20">
+          <div className="flex sm:gap-5 gap-2 items-center sm:h-14 h-10">
+            <Image src={Currency} alt="" className="mobile-img" />
             <div>
-              <h1 className="text-2xl">Net Worth</h1>
-              <p className="font-bold text-3xl text-yellow-300">$100,000</p>
+              <h1 className="text-lg sm:text-2xl">Net Worth</h1>
+              <p className="font-bold text-xl sm:text-3xl text-yellow-300">
+                $100,000
+              </p>
             </div>
           </div>
           <div>
-            <h1 className="text-2xl">Net APY</h1>
-            <p className="font-bold text-3xl text-yellow-300">--</p>
+            <h1 className="text-normal sm:text-2xl">Net APY</h1>
+            <p className="font-bold text-xl sm:text-3xl text-yellow-300">--</p>
           </div>
         </div>
         <div>
@@ -79,7 +81,7 @@ export default function page() {
       </div>
 
       {/* user assets section */}
-      <div className="flex gap-10 justify-center mb-10">
+      <div className="dashboard-stats flex gap-10 justify-center mt-10 mb-10">
         <div className="data-box">
           <h1>Your supplies</h1>
           <p>Nothing supplied yet</p>
@@ -91,8 +93,8 @@ export default function page() {
       </div>
 
       {/* interxchange assets sections */}
-      <div className="flex gap-10 justify-center">
-        <div className="table-box w-2/5">
+      <div className="mobile-table flex gap-10 justify-center">
+        <div className="table-box sm:w-2/5 w-full">
           <h1>Assets to supply</h1>
           <table>
             <thead>
