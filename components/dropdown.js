@@ -2,10 +2,14 @@
 
 import Image from "next/image";
 import Arrow from "../images/arrow2.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Dropdown({ label, options, onClick }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    handleDropdown();
+  }, [label]);
 
   const handleDropdown = () => {
     setIsOpen(!isOpen);

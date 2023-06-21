@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function page() {
   const [network, setNetwork] = useState("Ethereum");
-  const networkOptions = ["Ethereum", "Polygon"];
+  const networkOptions = ["Ethereum", "Polygon", "Solana"];
   const handleNetworkChange = (e) => {
     setNetwork(e.target.value);
   };
@@ -25,7 +25,7 @@ export default function page() {
           Enter position:
           <input
             type="number"
-            placeholder={`amount (in ${network})`}
+            placeholder={`amount (${network} chain)`}
             className="px-4 py-3 w-96 ml-3 rounded-3xl text-black"
           />
         </label>

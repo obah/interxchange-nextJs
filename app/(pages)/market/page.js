@@ -16,7 +16,7 @@ export default function page() {
     setTableType("NFT");
   };
 
-  const networkOptions = ["Ethereum", "Polygon"];
+  const networkOptions = ["Ethereum", "Polygon", "Solana"];
   const handleNetwork = (e) => {
     setNetwork(e.target.value);
   };
@@ -46,7 +46,7 @@ export default function page() {
         </div>
         <div>
           <Dropdown
-            label={`network: ${network}`}
+            label={network}
             options={networkOptions}
             onClick={handleNetwork}
           />

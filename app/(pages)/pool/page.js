@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function page() {
   const [network, setNetwork] = useState("Ethereum");
-  const networkOptions = ["Ethereum", "Polygon"];
+  const networkOptions = ["Ethereum", "Polygon", "Solana"];
   const handleNetworkChange = (e) => {
     setNetwork(e.target.value);
   };
