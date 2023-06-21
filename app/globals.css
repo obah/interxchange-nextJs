@@ -29,7 +29,7 @@ h3 {
 }
 
 .primary-btn {
-  @apply text-black bg-yellow-200 font-bold sm:p-4 py-4 px-16 rounded-lg sm:text-2xl text-lg text-center;
+  @apply text-black bg-yellow-200 font-bold p-4 sm:py-4 sm:px-16 rounded-lg sm:text-2xl text-lg text-center;
   @apply transition ease-in-out delay-75 hover:rounded-full hover:bg-yellow-300;
 }
 
@@ -133,5 +133,19 @@ h3 {
 
   .card button {
     @apply hidden;
+  }
+
+  .hidden-head {
+    background: #0c1021;
+    @apply w-full flex flex-col m-0 px-8 pt-8 pb-14 fixed -top-full;
+  }
+
+  .visible-head {
+    background: #0c1021;
+    @apply w-full flex flex-col m-0 px-8 pt-8 pb-14 fixed top-0;
+  }
+
+  .visible-head nav {
+    @apply flex flex-col items-center gap-5;
   }
 }

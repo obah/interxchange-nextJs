@@ -3,17 +3,25 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Header() {
+export default function Header({ show }) {
   const path = usePathname();
 
-  const inactiveLink = "font-bold text-4xl hover:text-yellow-300";
+  const inactiveLink = "font-bold text-3xl sm:text-4xl hover:text-yellow-300";
   const activeLink = inactiveLink + " underline";
 
   return (
     <header>
-      <div className="my-10 mx-20">
-        <div className="flex justify-between mb-16">
-          <Link href={"/"} className="font-bold text-7xl hover:text-yellow-300">
+      <div
+        className={
+          (show ? "visible-head" : "hidden-head") +
+          " my-5 mx-10 sm:my-10 sm:mx-20 transition-all"
+        }
+      >
+        <div className="flex justify-between mb-10 sm:mb-16">
+          <Link
+            href={"/"}
+            className="font-bold text-4xl sm:text-7xl hover:text-yellow-300"
+          >
             InterXchange
           </Link>
           <button className="primary-btn">connect</button>
