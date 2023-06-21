@@ -52,7 +52,7 @@ export default function Home() {
             />
           </div>
           <div className="sm:w-1/2 flex flex-col pt-16">
-            <h2 className="mb-10 sm:mt-0 -mt-16 z-10">
+            <h2 className="home-h2 mb-10 sm:mt-0 -mt-16 z-10">
               Welcome to InterXchange
             </h2>
             <div className="z-10">
@@ -79,7 +79,7 @@ export default function Home() {
 
       {/* mid section */}
       <div className="sm:mt-80 mt-10">
-        <h2 className="ml-auto mr-auto w-3/4 text-center">
+        <h2 className="home-h2 ml-auto mr-auto w-3/4 text-center">
           Start experiencing the future of token borrowing with Interxchange.
         </h2>
         <div className="w-full mt-10 sm:mb-52 mb-20">
@@ -89,7 +89,7 @@ export default function Home() {
       </div>
 
       {/* final section */}
-      <h2 className="text-center mb-10">Supported NFTs</h2>
+      <h2 className="home-h2 text-center mb-10">Supported NFTs</h2>
       <div className="flex gap-5 justify-center">
         <Dropdown
           label={chain}

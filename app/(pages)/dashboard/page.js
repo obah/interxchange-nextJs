@@ -5,12 +5,48 @@ import Currency from "@/images/currency.png";
 import Dropdown from "@/components/dropdown";
 import { useState } from "react";
 import { supplyData, borrowData } from "@/lib/tableData";
-import Link from "next/link";
+import ReactModal from "react-modal";
+import Supply from "@/components/supply";
+import Claim from "@/components/claim";
+import Borrow from "@/components/borrow";
+
+// Modal.setAppElement("#root");
+
+const customStyles = {
+  overlay: {
+    backgroundColor: "transparent",
+  },
+  content: {
+    background: "#0c1021",
+    border: 0,
+    borderRadius: "20px",
+    padding: "40px",
+  },
+};
 
 export default function page() {
   const [network, setNetwork] = useState("Ethereum");
+  const [supplyModalIsOpen, setSupplyIsOpen] = useState(false);
+  const [claimModalIsOpen, setClaimIsOpen] = useState(false);
+  const [borrowModalIsOpen, setBorrowIsOpen] = useState(false);
 
   const networkOptions = ["Ethereum", "Polygon", "Solana"];
+
+  const openSupplyModal = () => {
+    setSupplyIsOpen(true);
+  };
+  const openClaimModal = () => {
+    setClaimIsOpen(true);
+  };
+  const openBorrowModal = () => {
+    setBorrowIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setSupplyIsOpen(false);
+    setClaimIsOpen(false);
+    setBorrowIsOpen(false);
+  };
 
   const handleNetwork = (e) => {
     setNetwork(e.target.value);
@@ -56,7 +92,7 @@ export default function page() {
 
       {/* interxchange assets sections */}
       <div className="flex gap-10 justify-center">
-        <div className="table-box">
+        <div className="table-box w-2/5">
           <h1>Assets to supply</h1>
           <table>
             <thead>
@@ -82,17 +118,23 @@ export default function page() {
                   <td>
                     <Image src={data.collateral()} alt="" />
                   </td>
-                  <td
-                    className={
-                      data.button === "Supply" && !data.disbled
-                        ? "supply-btn"
-                        : data.button === "Claim"
-                        ? "claim-btn"
-                        : "disabled-btn"
-                    }
-                  >
-                    <Link href={"/"}>{data.button}</Link>
-                  </td>
+                  {data.button === "Supply" && !data.disbled ? (
+                    <td>
+                      <button onClick={openSupplyModal} className="supply-btn">
+                        {data.button}
+                      </button>
+                    </td>
+                  ) : data.button === "Claim" ? (
+                    <td>
+                      <button onClick={openClaimModal} className="claim-btn">
+                        {data.button}
+                      </button>
+                    </td>
+                  ) : (
+                    <td>
+                      <button className="disabled-btn">{data.button}</button>
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>
@@ -122,19 +164,46 @@ export default function page() {
                   <td>{data.available}</td>
                   <td>{data.apy}</td>
                   <td>{data.stable}</td>
-                  <td
-                    className={
-                      data.button === "enabled" ? "supply-btn" : "disabled-btn"
-                    }
-                  >
-                    <Link href={"/"}>Borrow</Link>
-                  </td>
+                  {data.button === "enabled" ? (
+                    <td>
+                      <button onClick={openBorrowModal} className="supply-btn">
+                        Borrow
+                      </button>
+                    </td>
+                  ) : (
+                    <td>
+                      <button className="disabled-btn">Borrow</button>
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       </div>
+
+      {/* modals here */}
+      <ReactModal
+        isOpen={supplyModalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <Supply close={closeModal} />
+      </ReactModal>
+      <ReactModal
+        isOpen={claimModalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <Claim close={closeModal} />
+      </ReactModal>
+      <ReactModal
+        isOpen={borrowModalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <Borrow close={closeModal} />
+      </ReactModal>
     </div>
   );
 }

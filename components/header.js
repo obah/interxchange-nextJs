@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const path = usePathname();
 
-  const inactiveLink = "font-bold text-3xl hover:text-yellow-300";
+  const inactiveLink = "font-bold text-4xl hover:text-yellow-300";
   const activeLink = inactiveLink + " underline";
 
   return (

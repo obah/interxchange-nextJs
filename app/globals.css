@@ -11,7 +11,7 @@ body {
   margin: 0 auto;
 }
 
-h2 {
+.home-h2 {
   @apply font-bold sm:text-5xl text-3xl;
 }
 
@@ -55,7 +55,7 @@ h3 {
 }
 
 .table-box {
-  @apply border-2 rounded-3xl p-5 w-2/5;
+  @apply border-2 rounded-3xl p-5;
 }
 
 .table-box h1 {
@@ -74,16 +74,20 @@ h3 {
   @apply font-normal text-xs;
 }
 
-.supply-btn a {
-  @apply text-black bg-yellow-200 hover:bg-yellow-300 rounded-3xl px-4 py-2;
+.supply-btn {
+  @apply text-black bg-yellow-300 hover:bg-yellow-200 rounded-3xl px-4 py-2;
 }
 
-.claim-btn a {
+.claim-btn {
   @apply text-black bg-white hover:bg-gray-300 rounded-3xl px-6 py-2;
 }
 
-.disabled-btn a {
+.disabled-btn {
   @apply text-black bg-yellow-100 hover:cursor-not-allowed rounded-3xl px-4 py-2;
+}
+
+.back-btn {
+  @apply p-3 rounded-full bg-black;
 }
 
 /* more mobile styles */
