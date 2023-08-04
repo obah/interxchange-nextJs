@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Card({ pageUrl, image, heading, body, btnImg }) {
   return (
-    <div className="card mx-auto mb-4 w-2/5 border sm:border-2">
+    <div className="card mx-auto mb-4 w-4/5 rounded-2xl border sm:border-2 md:w-2/5">
       <a
         href={pageUrl}
         target="_blank"
