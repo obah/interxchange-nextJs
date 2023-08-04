@@ -104,13 +104,15 @@ export default function Home() {
       </div>
       <div>
         {cardItems.map((items) => (
-          <Card
-            pageUrl={items.pageUrl}
-            image={items.imageSrc()}
-            heading={items.heading}
-            body={items.body}
-            btnImg={require("../images/arrow.png")}
-          />
+          <div key={items.heading}>
+            <Card
+              pageUrl={items.pageUrl}
+              image={items.imageSrc()}
+              heading={items.heading}
+              body={items.body}
+              btnImg={require("../images/arrow.png")}
+            />
+          </div>
         ))}
       </div>
       <div className="w-full flex justify-center sm:mt-16 mt-12 sm:mb-36 mb-20">
