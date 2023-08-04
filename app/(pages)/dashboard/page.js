@@ -53,22 +53,24 @@ export default function page() {
   };
 
   return (
-    <div className="sm:mt-20 sm:m-32 m-10">
+    <div className="m-10 sm:m-32 sm:mt-20">
       {/* stats section */}
-      <div className="flex justify-between items-center">
-        <div className="flex sm:gap-10 gap-3 items-center sm:-mt-20">
-          <div className="flex sm:gap-5 gap-2 items-center sm:h-14 h-10">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3 sm:-mt-20 sm:gap-10">
+          <div className="flex h-10 items-center gap-2 sm:h-14 sm:gap-5">
             <Image src={Currency} alt="" className="mobile-img" />
             <div>
-              <h1 className="text-lg sm:text-2xl">Net Worth</h1>
-              <p className="font-bold text-xl sm:text-3xl text-yellow-300">
+              <h1 className="text-lg sm:text-2xl md:text-center">Net Worth</h1>
+              <p className="text-xl font-bold text-yellow-300 sm:text-3xl md:text-center">
                 $100,000
               </p>
             </div>
           </div>
           <div>
-            <h1 className="text-normal sm:text-2xl">Net APY</h1>
-            <p className="font-bold text-xl sm:text-3xl text-yellow-300">--</p>
+            <h1 className="text-normal sm:text-2xl md:text-center">Net APY</h1>
+            <p className="text-xl font-bold text-yellow-300 sm:text-3xl md:text-center">
+              --
+            </p>
           </div>
         </div>
         <div>
@@ -81,21 +83,21 @@ export default function page() {
       </div>
 
       {/* user assets section */}
-      <div className="dashboard-stats flex gap-10 justify-center mt-10 mb-10">
+      <div className="dashboard-stats mb-10 mt-10 flex justify-center gap-10">
         <div className="data-box">
-          <h1>Your supplies</h1>
-          <p>Nothing supplied yet</p>
+          <h1 className="md:text-center">Your supplies</h1>
+          <p className="md:text-center">Nothing supplied yet</p>
         </div>
         <div className="data-box">
-          <h1>Your borrows</h1>
-          <p>Nothing borrowed yet</p>
+          <h1 className="md:text-center">Your borrows</h1>
+          <p className="md:text-center">Nothing borrowed yet</p>
         </div>
       </div>
 
       {/* interxchange assets sections */}
-      <div className="mobile-table flex gap-10 justify-center">
-        <div className="table-box sm:w-2/5 w-full">
-          <h1>Assets to supply</h1>
+      <div className="mobile-table flex justify-center gap-10">
+        <div className="table-box w-full sm:w-2/5">
+          <h1 className="md:text-center">Assets to supply</h1>
           <table>
             <thead>
               <tr>
@@ -112,7 +114,7 @@ export default function page() {
                   <td>
                     <div>
                       <Image src={data.logo()} alt="" />
-                      <p>{data.asset}</p>
+                      <p className="md:text-center">{data.asset}</p>
                     </div>
                   </td>
                   <td>{data.worth}</td>
@@ -143,7 +145,7 @@ export default function page() {
           </table>
         </div>
         <div className="table-box">
-          <h1>Assets to borrow</h1>
+          <h1 className="md:text-center">Assets to borrow</h1>
           <table>
             <thead>
               <tr>
@@ -160,7 +162,7 @@ export default function page() {
                   <td>
                     <div>
                       <Image src={data.logo()} alt="" />
-                      <p>{data.asset}</p>
+                      <p className="md:text-center">{data.asset}</p>
                     </div>
                   </td>
                   <td>{data.available}</td>

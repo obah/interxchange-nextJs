@@ -25,27 +25,33 @@ export default function page() {
   const activeTable = inactiveTable + " underline";
 
   return (
-    <div className="sm:mt-20 sm:m-32 m-5 mb-20">
+    <div className="m-5 mb-20 sm:m-32 sm:mt-20">
       {/* stats section */}
-      <div className="flex justify-between items-center">
-        <div className="flex sm:gap-10 gap-2 items-center sm:-mt-20">
-          <div className="flex sm:gap-5 gap-2 items-center sm:h-14 h-10">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2 sm:-mt-20 sm:gap-10">
+          <div className="flex h-10 items-center gap-2 sm:h-14 sm:gap-5">
             <div>
-              <h1 className="sm:text-2xl text-md mb-2">Total Market Size</h1>
-              <p className="font-bold sm:text-3xl text-lg text-yellow-300">
+              <h1 className="text-md mb-2 text-center sm:text-2xl">
+                Total Market Size
+              </h1>
+              <p className="text-lg font-bold text-yellow-300 sm:text-3xl md:text-center">
                 $10B
               </p>
             </div>
           </div>
           <div>
-            <h1 className="sm:text-2xl text-lg mb-2">Total Available</h1>
-            <p className="font-bold sm:text-3xl text-xl text-yellow-300">
+            <h1 className="mb-2 text-lg sm:text-2xl md:text-center">
+              Total Available
+            </h1>
+            <p className="text-xl font-bold text-yellow-300 sm:text-3xl md:text-center">
               $6.2B
             </p>
           </div>
           <div>
-            <h1 className="sm:text-2xl text-lg mb-2">Total Borrowed</h1>
-            <p className="font-bold sm:text-3xl text-xl text-yellow-300">
+            <h1 className="mb-2 text-lg sm:text-2xl md:text-center">
+              Total Borrowed
+            </h1>
+            <p className="text-xl font-bold text-yellow-300 sm:text-3xl md:text-center">
               $3.8B
             </p>
           </div>
@@ -58,7 +64,7 @@ export default function page() {
           />
         </div>
       </div>
-      <div className="flex flex-col items-center sm:w-3/4 w-full sm:mt-0 mt-8 mx-auto">
+      <div className="mx-auto mt-8 flex w-full flex-col items-center sm:mt-0 sm:w-3/4">
         <div className="mb-8">
           <button
             onClick={handleTokenTable}
@@ -74,8 +80,8 @@ export default function page() {
           </button>
         </div>
         {/* table section */}
-        <div className="table-box table-mini sm:w-5/6 w-auto">
-          <h2 className="font-bold text-2xl">
+        <div className="table-box table-mini w-auto sm:w-5/6">
+          <h2 className="text-2xl font-bold md:text-center">
             {network} {tableType} assets
           </h2>
           <table>
@@ -96,7 +102,7 @@ export default function page() {
                   <td>
                     <div>
                       <Image src={data.logo()} alt="" />
-                      <p>{data.asset}</p>
+                      <p className="md:text-center">{data.asset}</p>
                     </div>
                   </td>
                   <td>{data.pool}</td>

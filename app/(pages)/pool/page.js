@@ -11,9 +11,9 @@ export default function page() {
   };
 
   return (
-    <div className="mini-page sm:mt-20 sm:m-32 m-5">
-      <div className="flex justify-between items-center sm:mb-10 mb-24">
-        <h1 className="font-black text-4xl text-yellow-200 sm:ml-24 ml-9">
+    <div className="mini-page m-5 sm:m-32 sm:mt-20">
+      <div className="mb-24 flex items-center justify-between sm:mb-10">
+        <h1 className="ml-9 text-4xl font-black text-yellow-200 sm:ml-24 md:text-center">
           Pools
         </h1>
         <Dropdown
@@ -22,9 +22,9 @@ export default function page() {
           onClick={handleNetworkChange}
         />
       </div>
-      <div className="flex flex-col gap-14 items-center border-2 sm:w-3/4 w-full mx-auto rounded-3xl sm:py-24 py-14">
+      <div className="mx-auto flex w-full flex-col items-center gap-14 rounded-3xl border-2 py-14 sm:w-3/4 sm:py-24">
         <button className="primary-btn w-1/3">Add position +</button>
-        <p className="font-normal text-2xl">
+        <p className="text-2xl font-normal md:text-center">
           Your active liquidity positions will appear here
         </p>
       </div>

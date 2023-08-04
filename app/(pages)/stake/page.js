@@ -11,9 +11,9 @@ export default function page() {
   };
 
   return (
-    <div className="mini-page sm:mt-20 sm:m-32 m-5">
-      <div className="flex justify-between items-center sm:mb-10 mb-24">
-        <h1 className="font-black text-4xl text-yellow-200 sm:ml-24 ml-9">
+    <div className="mini-page m-5 sm:m-32 sm:mt-20">
+      <div className="mb-24 flex items-center justify-between sm:mb-10">
+        <h1 className="ml-9 text-4xl font-black text-yellow-200 sm:ml-24 md:text-center">
           Staking
         </h1>
         <Dropdown
@@ -22,16 +22,16 @@ export default function page() {
           onClick={handleNetworkChange}
         />
       </div>
-      <div className="flex flex-col gap-8 items-center border-2 sm:w-3/4 w-full mx-auto rounded-3xl py-24">
-        <label className="font-normal text-lg sm:p-0 pl-5">
+      <div className="mx-auto flex w-full flex-col items-center gap-8 rounded-3xl border-2 py-24 sm:w-3/4">
+        <label className="pl-5 text-lg font-normal sm:p-0 sm:text-2xl">
           Enter position:
           <input
             type="number"
             placeholder={`amount (${network} chain)`}
-            className="px-4 py-3 w-96 sm:ml-3 ml-0 rounded-3xl text-black"
+            className="ml-0 w-96 rounded-3xl px-4 py-3 text-black sm:ml-3"
           />
         </label>
-        <button className="primary-btn sm:w-1/4 w-1/3">Stake</button>
+        <button className="primary-btn w-1/3 sm:w-1/4">Stake</button>
       </div>
     </div>
   );

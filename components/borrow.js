@@ -15,39 +15,41 @@ export default function Borrow({ close }) {
   };
 
   const tokenOptions = ["ETH", "USDC", "USDT", "DAI", "WBTC", "FRAX"];
-  const h2Style = "font-light text-2xl mb-2";
-  const pStyle = "font-black text-2xl";
+  const h2Style = "font-light text-2xl mb-2 md:text-center";
+  const pStyle = "font-black text-2xl md:text-center";
 
   return (
     <div>
-      <div className="flex justify-between mb-7">
+      <div className="mb-7 flex justify-between">
         <button onClick={close} className="back-btn">
           <Image src={backArrow} alt="" />
         </button>
-        <h1 className="font-bold text-3xl">Borrow</h1>
+        <h1 className="text-3xl font-bold md:text-center">Borrow</h1>
         <p className={h2Style}>ETH/USDC</p>
       </div>
-      <div className="flex justify-center mb-10">
+      <div className="mb-10 flex justify-center">
         <Dropdown
           label={token}
           options={tokenOptions}
           onClick={handleTokenChange}
         />
       </div>
-      <div className="flex justify-center mb-10">
+      <div className="mb-10 flex justify-center">
         <div className="flex flex-col justify-center">
-          <div className="flex flex-col gap-1 mb-10">
+          <div className="mb-10 flex flex-col gap-1">
             <input
               type="number"
               placeholder="amount"
-              className="px-4 py-2 w-96 rounded-3xl text-black"
+              className="w-96 rounded-3xl px-4 py-2 text-black"
             />
             <div className="flex justify-between">
-              <div className="flex gap-3 items-center">
+              <div className="flex items-center gap-3">
                 <Image src={usdc} alt="" />
                 <h2 className={pStyle}>USDC</h2>
               </div>
-              <p className="font-thin text-xs">BMax: 106,241.3USDC</p>
+              <p className="text-xs font-thin md:text-center">
+                BMax: 106,241.3USDC
+              </p>
             </div>
           </div>
           <div className="flex justify-between">

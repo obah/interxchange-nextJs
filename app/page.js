@@ -33,34 +33,34 @@ export default function Home() {
       {/* top section */}
       <div className="top-section m-10 sm:m-24">
         <div>
-          <h1 className="font-bold text-5xl sm:text-7xl mb-2 sm:mb-16">
+          <h1 className="mb-2 text-center text-5xl font-bold sm:mb-16 sm:text-7xl md:text-left">
             InterXchange
           </h1>
-          <Image src={Logo} alt="interxchange" className="hidden logo" />
+          <Image src={Logo} alt="interxchange" className="logo hidden" />
         </div>
         <div className="flex flex-col sm:flex-row sm:gap-20">
-          <div className=" sm:relative sm:w-1/2 sm:mt-8">
+          <div className=" sm:relative sm:mt-8 sm:w-1/2">
             <Image
               src={Dots}
               alt="vetor dots"
-              className="heroImg sm:absolute sm:top-0 sm:left-0 sm:z-10"
+              className="heroImg sm:absolute sm:left-0 sm:top-0 sm:z-10"
             />
             <Image
               src={Logo}
               alt="interxchange"
-              className="heroImg sm:absolute sm:top-0 sm:left-0 sm:z-20 sm:ml-28 sm:mt-24"
+              className="heroImg sm:absolute sm:left-0 sm:top-0 sm:z-20 sm:ml-28 sm:mt-24"
             />
           </div>
-          <div className="sm:w-1/2 flex flex-col pt-16">
-            <h2 className="home-h2 mb-10 sm:mt-0 -mt-16 z-10">
+          <div className="flex flex-col pt-16 sm:w-1/2">
+            <h2 className="z-10 -mt-16 mb-10 text-center text-3xl font-bold sm:mt-0 sm:text-5xl md:text-left">
               Welcome to InterXchange
             </h2>
             <div className="z-10">
-              <p className="home-p mb-10">
+              <p className="mb-10 text-center text-lg font-normal sm:text-2xl md:text-left">
                 the platform that allows you to borrow ERC-20 tokens using your
                 ERC-721 tokens as collateral
               </p>
-              <p className="home-p sm:mb-20 mb-16">
+              <p className="mb-16 text-center text-lg font-normal sm:mb-20 sm:text-2xl md:text-left">
                 Are you tired of having to sell your valuable ERC-721 assets
                 just to borrow ERC-20 tokens? With Interswap, you can easily
                 borrow the tokens you need without having to sacrifice your
@@ -68,7 +68,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mbr">
-              <Link href="/dashboard" className="primary-btn sm:w-1/3 w-1/2">
+              <Link href="/dashboard" className="primary-btn w-1/2 sm:w-1/3">
                 Launch App
               </Link>
             </div>{" "}
@@ -78,19 +78,21 @@ export default function Home() {
       </div>
 
       {/* mid section */}
-      <div className="sm:mt-80 mt-10">
-        <h2 className="home-h2 ml-auto mr-auto w-3/4 text-center">
+      <div className="mt-10 sm:mt-80">
+        <h2 className="ml-auto mr-auto w-3/4 text-center text-3xl font-bold sm:text-5xl">
           Start experiencing the future of token borrowing with Interxchange.
         </h2>
-        <div className="w-full mt-10 sm:mb-52 mb-20">
+        <div className="mb-20 mt-10 w-full sm:mb-52">
           <Image src={Icons1} alt="supported tokens" width={3840} />
           <Image src={Icons2} alt="supported tokens" width={3840} />
         </div>
       </div>
 
       {/* final section */}
-      <h2 className="home-h2 text-center mb-10">Supported NFTs</h2>
-      <div className="flex gap-5 justify-center">
+      <h2 className="mb-10 text-center text-3xl font-bold sm:text-5xl">
+        Supported NFTs
+      </h2>
+      <div className="flex justify-center gap-5">
         <Dropdown
           label={chain}
           options={chainOptions}
@@ -115,7 +117,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div className="w-full flex justify-center sm:mt-16 mt-12 sm:mb-36 mb-20">
+      <div className="mb-20 mt-12 flex w-full justify-center sm:mb-36 sm:mt-16">
         <button className="primary-btn">Load more</button>
       </div>
       <footer>

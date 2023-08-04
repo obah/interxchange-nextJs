@@ -9,12 +9,16 @@ export default function Supply({ close }) {
         <button onClick={close} className="back-btn">
           <Image src={backArrow} alt="" />
         </button>
-        <h1 className="font-bold text-3xl flex justify-center">Supply</h1>
+        <h1 className="flex justify-center text-3xl font-bold md:text-center">
+          Supply
+        </h1>
       </div>
-      <div className="font-normal text-2xl sm:w-1/3 w-full my-10 mx-auto flex flex-col items-center justify-center gap-10">
+      <div className="mx-auto my-10 flex w-full flex-col items-center justify-center gap-10 text-2xl font-normal sm:w-1/3">
         <Image src={bayc} alt="" width={80} height={80} />
-        <h1>BAYC</h1>
-        <p>Confirm you want supply BAYC worth 64.0 ETH as collateral</p>
+        <h1 className="md:text-center">BAYC</h1>
+        <p className="md:text-center">
+          Confirm you want supply BAYC worth 64.0 ETH as collateral
+        </p>
       </div>
       <div className="flex justify-center">
         <button onClick={close} className="supply-btn font-semibold">
