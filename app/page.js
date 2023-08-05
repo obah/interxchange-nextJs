@@ -85,7 +85,7 @@ export default function Home() {
         {/* mid section */}
         <section>
           <div className="mt-10 lg:mt-80">
-            <h2 className="ml-auto mr-auto w-3/4 text-center text-3xl font-bold lg:text-5xl">
+            <h2 className="ml-auto mr-auto w-full px-10 text-center text-3xl font-bold lg:w-3/4 lg:px-0 lg:text-5xl">
               Start experiencing the future of token borrowing with
               Interxchange.
             </h2>
