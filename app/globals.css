@@ -22,14 +22,6 @@ h3 {
   @apply transition-all delay-75 ease-in-out hover:rounded-full hover:bg-yellow-300;
 }
 
-.card {
-  border-radius: 32px;
-}
-
-.card button {
-  margin-right: -25px;
-}
-
 .data-box {
   @apply w-full rounded-3xl border p-5 sm:w-2/5 sm:border-2;
 }
@@ -83,26 +75,6 @@ h3 {
   body {
     max-width: 700px;
     margin: 0 auto;
-  }
-
-  .dropdown-btn {
-    @apply z-0 h-3 w-3;
-  }
-
-  .card {
-    height: 100px;
-  }
-
-  .card img {
-    @apply h-24 w-2/5;
-  }
-
-  .cardText {
-    @apply w-3/5 pr-2;
-  }
-
-  .card button {
-    @apply hidden;
   }
 
   .hidden-head {
