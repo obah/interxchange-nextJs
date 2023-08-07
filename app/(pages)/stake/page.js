@@ -1,5 +1,6 @@
 "use client";
 
+import Center from "@/components/center";
 import Dropdown from "@/components/dropdown";
 import { useState } from "react";
 
@@ -11,28 +12,30 @@ export default function page() {
   };
 
   return (
-    <div className="m-5 h-screen sm:m-32 sm:mt-20">
-      <div className="mb-24 flex items-center justify-between sm:mb-10">
-        <h1 className="ml-9 text-4xl font-black text-yellow-200 sm:ml-24 md:text-center">
-          Staking
-        </h1>
-        <Dropdown
-          label={network}
-          options={networkOptions}
-          onClick={handleNetworkChange}
-        />
-      </div>
-      <div className="mx-auto flex w-full flex-col items-center gap-8 rounded-3xl border-2 py-24 sm:w-3/4">
-        <label className="pl-5 text-lg font-normal sm:p-0 sm:text-2xl">
-          Enter position:
-          <input
-            type="number"
-            placeholder={`amount (${network} chain)`}
-            className="ml-0 w-96 rounded-3xl px-4 py-3 text-black sm:ml-3"
+    <Center>
+      <div className="m-5 h-screen lg:m-32 lg:mt-20">
+        <div className="mb-24 flex items-center justify-between lg:mb-10">
+          <h1 className="-mt-2 ml-4 px-0 text-4xl font-black text-yellow-200 lg:ml-24 lg:text-center">
+            Staking
+          </h1>
+          <Dropdown
+            label={network}
+            options={networkOptions}
+            onClick={handleNetworkChange}
           />
-        </label>
-        <button className="primary-btn w-1/3 sm:w-1/4">Stake</button>
+        </div>
+        <div className="mx-auto flex w-full flex-col items-center gap-8 rounded-3xl border-2 py-24 lg:w-3/4">
+          <label className="pl-5 text-center text-lg font-normal lg:p-0 lg:text-left lg:text-2xl">
+            Enter position:
+            <input
+              type="number"
+              placeholder={`amount (${network} chain)`}
+              className="ml-0 w-3/5 rounded-3xl py-3 pl-4 text-black lg:ml-3 lg:w-96"
+            />
+          </label>
+          <button className="primary-btn w-1/3 lg:w-1/4">Stake</button>
+        </div>
       </div>
-    </div>
+    </Center>
   );
 }
