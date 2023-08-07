@@ -77,20 +77,6 @@ h3 {
     margin: 0 auto;
   }
 
-  .hidden-head {
-    background: #0c1021;
-    @apply fixed -top-full m-0 flex w-full flex-col px-8 pb-14 pt-8;
-  }
-
-  .visible-head {
-    background: #0c1021;
-    @apply fixed top-0 z-10 m-0 flex w-full flex-col px-8 pb-14 pt-8;
-  }
-
-  .visible-head nav {
-    @apply flex flex-col items-center gap-5;
-  }
-
   .mobile-img {
     @apply h-8 w-8;
   }

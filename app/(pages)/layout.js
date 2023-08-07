@@ -1,10 +1,11 @@
 "use client";
 
 import Header from "@/components/header";
-import MenuIcon from "@/components/menuIcon";
+import { MenuIcon, CloseMenuIcon } from "@/components/menuIcon";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Center from "@/components/center";
 
 export default function layout({ children }) {
   const [showNav, setShowNav] = useState(false);
@@ -16,20 +17,20 @@ export default function layout({ children }) {
   }, [path]);
 
   return (
-    <>
-      <div className="block flex items-center justify-between px-5 pt-5 md:hidden">
+    <Center>
+      <div className="flex items-center justify-between px-5 pt-5 lg:hidden">
         <Link
           href={"/"}
-          className="font-bold text-4xl sm:text-7xl hover:text-yellow-300"
+          className="text-4xl font-bold hover:text-yellow-300 lg:text-7xl"
         >
           InterXchange
         </Link>
-        <button onClick={() => setShowNav(true)}>
-          <MenuIcon />
+        <button onClick={() => setShowNav(!showNav)}>
+          {!showNav ? <MenuIcon /> : <CloseMenuIcon />}
         </button>
       </div>
       <Header show={showNav} />
       <div>{children}</div>
-    </>
+    </Center>
   );
 }

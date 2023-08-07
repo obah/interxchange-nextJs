@@ -16,21 +16,21 @@ export default function Header({ show }) {
     }
   };
 
-  const inactiveLink = "font-bold text-3xl sm:text-4xl hover:text-yellow-300";
+  const inactiveLink = "font-bold text-3xl lg:text-4xl hover:text-yellow-300";
   const activeLink = inactiveLink + " underline";
 
   return (
     <header>
       <div
         className={
-          (show ? "visible-head" : "hidden-head") +
-          " my-5 mx-10 sm:my-10 sm:mx-20 transition-all"
+          (show ? "top-20" : "-top-full") +
+          " fixed z-10 flex h-screen w-screen flex-col bg-[#0c1021] p-8 transition-all lg:static lg:h-auto lg:w-full lg:bg-transparent"
         }
       >
-        <div className="flex justify-between mb-10 sm:mb-16">
+        <div className="mb-10 flex justify-center lg:mb-16 lg:justify-between">
           <Link
             href={"/"}
-            className="font-bold text-4xl sm:text-7xl hover:text-yellow-300"
+            className="hidden font-bold hover:text-yellow-300 lg:block lg:text-7xl"
           >
             InterXchange
           </Link>
@@ -39,7 +39,7 @@ export default function Header({ show }) {
           </button>
         </div>
         <div>
-          <nav className="flex justify-between w-2/3 mx-auto">
+          <nav className="mx-auto flex w-full flex-col items-center gap-12 lg:w-2/3 lg:flex-row lg:justify-between lg:gap-20">
             <Link
               href={"/dashboard"}
               className={
