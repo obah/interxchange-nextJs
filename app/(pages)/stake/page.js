@@ -11,7 +11,7 @@ export default function page() {
   };
 
   return (
-    <div className="mini-page m-5 sm:m-32 sm:mt-20">
+    <div className="m-5 h-screen sm:m-32 sm:mt-20">
       <div className="mb-24 flex items-center justify-between sm:mb-10">
         <h1 className="ml-9 text-4xl font-black text-yellow-200 sm:ml-24 md:text-center">
           Staking
