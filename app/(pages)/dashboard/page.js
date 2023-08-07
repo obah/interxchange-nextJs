@@ -90,7 +90,7 @@ export default function page() {
 
         {/* user assets section */}
         <div className="flex flex-col justify-center gap-10 py-10 lg:flex-row">
-          <div className="w-full rounded-3xl border p-5 lg:w-2/5 lg:border-2">
+          <div className="w-full rounded-3xl border p-5 lg:w-[512px] lg:min-w-[480px] lg:border-2">
             <h1 className="mb-5 text-lg font-bold lg:mb-10 lg:text-center lg:text-3xl">
               Your supplies
             </h1>
@@ -98,7 +98,7 @@ export default function page() {
               Nothing supplied yet
             </p>
           </div>
-          <div className="w-full rounded-3xl border p-5 lg:w-2/5 lg:border-2">
+          <div className="w-full rounded-3xl border p-5 lg:w-[512px] lg:min-w-[480px] lg:border-2">
             <h1 className="mb-5 text-lg font-bold lg:mb-10 lg:text-center lg:text-3xl">
               Your borrows
             </h1>
@@ -110,7 +110,7 @@ export default function page() {
 
         {/* interxchange assets sections */}
         <div className="flex flex-col justify-center gap-10 lg:flex-row">
-          <div className="table-box w-screen lg:w-2/5">
+          <div className="table-box w-full lg:w-[512px]">
             <h1 className="lg:text-center">Assets to supply</h1>
             <table>
               <thead>
@@ -161,7 +161,7 @@ export default function page() {
               </tbody>
             </table>
           </div>
-          <div className="table-box w-screen lg:w-2/5">
+          <div className="table-box w-full lg:w-[512px]">
             <h1 className="lg:text-center">Assets to borrow</h1>
             <table>
               <thead>
