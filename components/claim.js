@@ -5,21 +5,22 @@ import eth from "@/images/eth.png";
 import usdc from "@/images/usdc.png";
 
 export default function Claim({ close }) {
-  const h2Style = "font-light sm:text-2xl text-lg mb-2 md:text-center";
-  const pStyle =
-    "sm:font-extrabold font-bold sm:text-3xl text-lg md:text-center";
+  const h2Style = "font-light lg:text-2xl text-lg mb-2 text-center";
+  const pStyle = "lg:font-extrabold font-bold lg:text-3xl text-lg text-center";
   const mifp = "flex flex-col items-center gap-1";
 
   return (
     <div>
-      <div className="mb-7 flex justify-between">
+      <div className="mb-3 flex justify-between md:mb-7">
         <button onClick={close} className="back-btn">
           <Image src={backArrow} alt="" />
         </button>
-        <h1 className="text-3xl font-bold md:text-center">Claim</h1>
+        <h1 className="hidden text-3xl font-bold md:block md:text-center">
+          Claim
+        </h1>
         <h2 className={h2Style}>ETH/USDC</h2>
       </div>
-      <div className="my-36 flex justify-center gap-5 sm:gap-10">
+      <div className="my-10 flex justify-center gap-5 sm:gap-10 md:my-36">
         <div className="flex flex-col items-center">
           <Image src={bayc} alt="" width={80} height={80} />
           <p className={h2Style}>BAYC</p>

@@ -15,8 +15,8 @@ export default function Borrow({ close }) {
   };
 
   const tokenOptions = ["ETH", "USDC", "USDT", "DAI", "WBTC", "FRAX"];
-  const h2Style = "font-light text-2xl mb-2 md:text-center";
-  const pStyle = "font-black text-2xl md:text-center";
+  const h2Style = "font-light text-lg md:text-2xl mb-2 md:text-center";
+  const pStyle = "font-black text-lg md:text-2xl md:text-center";
 
   return (
     <div>
@@ -24,7 +24,9 @@ export default function Borrow({ close }) {
         <button onClick={close} className="back-btn">
           <Image src={backArrow} alt="" />
         </button>
-        <h1 className="text-3xl font-bold md:text-center">Borrow</h1>
+        <h1 className="hidden text-3xl font-bold md:block md:text-center">
+          Borrow
+        </h1>
         <p className={h2Style}>ETH/USDC</p>
       </div>
       <div className="mb-10 flex justify-center">
@@ -40,7 +42,7 @@ export default function Borrow({ close }) {
             <input
               type="number"
               placeholder="amount"
-              className="w-96 rounded-3xl px-4 py-2 text-black"
+              className="w-full rounded-3xl px-4 py-2 text-black lg:w-96"
             />
             <div className="flex justify-between">
               <div className="flex items-center gap-3">
