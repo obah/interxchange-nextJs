@@ -18,7 +18,7 @@ export default function layout({ children }) {
 
   return (
     <Center>
-      <div className="flex items-center justify-between px-5 pt-5 lg:hidden">
+      <div className="flex w-screen items-center justify-between p-5 pb-0 lg:hidden">
         <Link
           href={"/"}
           className="text-4xl font-bold hover:text-yellow-300 lg:text-7xl"

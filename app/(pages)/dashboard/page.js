@@ -55,26 +55,26 @@ export default function page() {
 
   return (
     <Center>
-      <div className="m-10 sm:m-32 sm:mt-20">
+      <div className="mt-10 px-4 lg:px-32">
         {/* stats section */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3 sm:-mt-20 sm:gap-10">
-            <div className="flex h-10 items-center gap-2 sm:h-14 sm:gap-5">
-              <Image src={Currency} alt="" className="mobile-img" />
+        <div className="flex w-auto items-center justify-between">
+          <div className="-mt-10 flex items-center justify-between gap-3 lg:-mt-20">
+            <div className="flex h-10 items-center gap-2 lg:h-14 lg:gap-5">
+              <Image src={Currency} alt="" className="hidden md:block" />
               <div>
-                <h1 className="text-lg sm:text-2xl md:text-center">
+                <h1 className="text-lg lg:text-center lg:text-2xl">
                   Net Worth
                 </h1>
-                <p className="text-xl font-bold text-yellow-300 sm:text-3xl md:text-center">
+                <p className="text-xl font-bold text-yellow-300 lg:text-center lg:text-3xl">
                   $100,000
                 </p>
               </div>
             </div>
             <div>
-              <h1 className="text-normal sm:text-2xl md:text-center">
+              <h1 className="text-normal lg:text-center lg:text-2xl">
                 Net APY
               </h1>
-              <p className="text-xl font-bold text-yellow-300 sm:text-3xl md:text-center">
+              <p className="text-xl font-bold text-yellow-300 lg:text-center lg:text-3xl">
                 --
               </p>
             </div>
@@ -89,21 +89,29 @@ export default function page() {
         </div>
 
         {/* user assets section */}
-        <div className="dashboard-stats mb-10 mt-10 flex justify-center gap-10">
-          <div className="data-box">
-            <h1 className="md:text-center">Your supplies</h1>
-            <p className="md:text-center">Nothing supplied yet</p>
+        <div className="flex flex-col justify-center gap-10 py-10 lg:flex-row">
+          <div className="w-full rounded-3xl border p-5 lg:w-2/5 lg:border-2">
+            <h1 className="mb-5 text-lg font-bold lg:mb-10 lg:text-center lg:text-3xl">
+              Your supplies
+            </h1>
+            <p className="text-sm font-light lg:text-center lg:text-2xl">
+              Nothing supplied yet
+            </p>
           </div>
-          <div className="data-box">
-            <h1 className="md:text-center">Your borrows</h1>
-            <p className="md:text-center">Nothing borrowed yet</p>
+          <div className="w-full rounded-3xl border p-5 lg:w-2/5 lg:border-2">
+            <h1 className="mb-5 text-lg font-bold lg:mb-10 lg:text-center lg:text-3xl">
+              Your borrows
+            </h1>
+            <p className="text-sm font-light lg:text-center lg:text-2xl">
+              Nothing borrowed yet
+            </p>
           </div>
         </div>
 
         {/* interxchange assets sections */}
-        <div className="mobile-table flex justify-center gap-10">
-          <div className="table-box w-full sm:w-2/5">
-            <h1 className="md:text-center">Assets to supply</h1>
+        <div className="flex flex-col justify-center gap-10 lg:flex-row">
+          <div className="table-box w-screen lg:w-2/5">
+            <h1 className="lg:text-center">Assets to supply</h1>
             <table>
               <thead>
                 <tr>
@@ -120,7 +128,7 @@ export default function page() {
                     <td>
                       <div>
                         <Image src={data.logo()} alt="" />
-                        <p className="md:text-center">{data.asset}</p>
+                        <p className="lg:text-center">{data.asset}</p>
                       </div>
                     </td>
                     <td>{data.worth}</td>
@@ -153,8 +161,8 @@ export default function page() {
               </tbody>
             </table>
           </div>
-          <div className="table-box">
-            <h1 className="md:text-center">Assets to borrow</h1>
+          <div className="table-box w-screen lg:w-2/5">
+            <h1 className="lg:text-center">Assets to borrow</h1>
             <table>
               <thead>
                 <tr>
@@ -171,7 +179,7 @@ export default function page() {
                     <td>
                       <div>
                         <Image src={data.logo()} alt="" />
-                        <p className="md:text-center">{data.asset}</p>
+                        <p className="lg:text-center">{data.asset}</p>
                       </div>
                     </td>
                     <td>{data.available}</td>

@@ -22,18 +22,6 @@ h3 {
   @apply transition-all delay-75 ease-in-out hover:rounded-full hover:bg-yellow-300;
 }
 
-.data-box {
-  @apply w-full rounded-3xl border p-5 sm:w-2/5 sm:border-2;
-}
-
-.data-box h1 {
-  @apply mb-5 text-lg font-bold sm:mb-10 sm:text-3xl;
-}
-
-.data-box p {
-  @apply text-sm font-light sm:text-2xl;
-}
-
 .table-box {
   @apply rounded-3xl border p-3 sm:border-2 sm:p-5;
 }
@@ -72,20 +60,6 @@ h3 {
 
 /* more mobile styles */
 @media screen and (max-width: 768px) {
-  body {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .mobile-img {
-    @apply h-8 w-8;
-  }
-
-  .dashboard-stats,
-  .mobile-table {
-    @apply flex flex-col;
-  }
-
   .table-mini tr td {
     @apply text-xs;
   }
