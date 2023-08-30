@@ -17,8 +17,8 @@ h3 {
 }
 
 .primary-btn {
-  @apply rounded-lg bg-yellow-200 px-6 py-4 text-lg  font-bold text-black sm:text-2xl lg:px-16;
-  @apply transition-all delay-75 ease-in-out hover:rounded-full hover:bg-yellow-300;
+  @apply rounded-lg bg-yellow-200 px-6 py-4 text-lg  font-bold text-black hover:rounded-full hover:bg-yellow-300 sm:text-2xl lg:px-16;
+  @apply transition-all delay-75 ease-in-out;
 }
 
 .table-box {
