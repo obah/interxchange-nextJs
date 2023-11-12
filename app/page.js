@@ -36,11 +36,9 @@ export default function Home() {
             <h1 className="mb-2 hidden text-center text-5xl font-bold lg:mb-16 lg:block lg:text-left lg:text-7xl">
               InterXchange
             </h1>
-            
+
             <div className="flex flex-col gap-0 lg:flex-row lg:gap-20">
-
               <div className=" lg:relative lg:mt-8 lg:flex lg:w-1/2 lg:items-center lg:justify-center">
-
                 <Image
                   src={Dots}
                   alt=""
@@ -55,7 +53,6 @@ export default function Home() {
               </div>
 
               <div className="relative z-10 mb-10 flex h-1/2 w-full flex-col items-center pt-16 lg:mb-0 lg:h-auto lg:w-1/2 lg:items-start lg:justify-start">
-
                 <h2 className="z-10 -mt-16 mb-10 text-center text-3xl font-bold lg:mt-0 lg:text-left lg:text-5xl">
                   Welcome to InterXchange
                 </h2>
@@ -77,7 +74,7 @@ export default function Home() {
                 <Image
                   src={Logo}
                   alt="interxchange"
-                  className="absolute z-0  h-60 w-60 brightness-75 lg:hidden"
+                  className="absolute top-40 z-0 h-60  w-60 brightness-75 sm:top-12 lg:hidden"
                 />
 
                 <Link href="/dashboard" className="primary-btn">
@@ -90,7 +87,6 @@ export default function Home() {
 
         <section>
           <div className="mt-10 lg:mt-80">
-
             <h2 className="ml-auto mr-auto w-full px-10 text-center text-3xl font-bold lg:w-3/4 lg:px-0 lg:text-5xl">
               Start experiencing the future of token borrowing with
               Interxchange.
