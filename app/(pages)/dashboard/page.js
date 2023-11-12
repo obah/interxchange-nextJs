@@ -10,6 +10,7 @@ import Supply from "@/components/supply";
 import Claim from "@/components/claim";
 import Borrow from "@/components/borrow";
 import Center from "@/components/center";
+import Button from "@/components/button";
 
 // Modal.setAppElement("#root");
 
@@ -70,6 +71,7 @@ export default function page() {
                 </p>
               </div>
             </div>
+
             <div>
               <h1 className="text-normal lg:text-center lg:text-2xl">
                 Net APY
@@ -79,6 +81,7 @@ export default function page() {
               </p>
             </div>
           </div>
+
           <div>
             <Dropdown
               label={network}
@@ -88,7 +91,7 @@ export default function page() {
           </div>
         </div>
 
-        {/* user assets section */}
+        {/* this 2 can be 1 component */}
         <div className="flex flex-col justify-center gap-10 py-10 lg:flex-row">
           <div className="w-full rounded-3xl border p-5 lg:w-[512px] lg:min-w-[480px] lg:border-2">
             <h1 className="mb-5 text-lg font-bold lg:mb-10 lg:text-center lg:text-3xl">
@@ -98,6 +101,7 @@ export default function page() {
               Nothing supplied yet
             </p>
           </div>
+
           <div className="w-full rounded-3xl border p-5 lg:w-[512px] lg:min-w-[480px] lg:border-2">
             <h1 className="mb-5 text-lg font-bold lg:mb-10 lg:text-center lg:text-3xl">
               Your borrows
@@ -108,10 +112,10 @@ export default function page() {
           </div>
         </div>
 
-        {/* interxchange assets sections */}
         <div className="flex flex-col justify-center gap-10 lg:flex-row">
           <div className="table-box w-full lg:w-[512px]">
             <h1 className="lg:text-center">Assets to supply</h1>
+
             <table>
               <thead>
                 <tr>
@@ -122,6 +126,7 @@ export default function page() {
                   <td></td>
                 </tr>
               </thead>
+
               <tbody>
                 {supplyData.map((data) => (
                   <tr key={data.asset}>
@@ -136,24 +141,22 @@ export default function page() {
                     <td>
                       <Image src={data.collateral()} alt="" />
                     </td>
+
                     {data.button === "Supply" && !data.disbled ? (
                       <td>
-                        <button
-                          onClick={openSupplyModal}
-                          className="supply-btn"
-                        >
+                        <Button role="supply" handler={openSupplyModal}>
                           {data.button}
-                        </button>
+                        </Button>
                       </td>
                     ) : data.button === "Claim" ? (
                       <td>
-                        <button onClick={openClaimModal} className="claim-btn">
+                        <Button handler={openClaimModal} role="claim">
                           {data.button}
-                        </button>
+                        </Button>
                       </td>
                     ) : (
                       <td>
-                        <button className="disabled-btn">{data.button}</button>
+                        <Button role="disabled">{data.button}</Button>
                       </td>
                     )}
                   </tr>
@@ -163,6 +166,7 @@ export default function page() {
           </div>
           <div className="table-box w-full lg:w-[512px]">
             <h1 className="lg:text-center">Assets to borrow</h1>
+
             <table>
               <thead>
                 <tr>
@@ -173,6 +177,7 @@ export default function page() {
                   <td></td>
                 </tr>
               </thead>
+
               <tbody>
                 {borrowData.map((data) => (
                   <tr key={data.asset}>
@@ -187,16 +192,13 @@ export default function page() {
                     <td>{data.stable}</td>
                     {data.button === "enabled" ? (
                       <td>
-                        <button
-                          onClick={openBorrowModal}
-                          className="supply-btn"
-                        >
+                        <Button handler={openBorrowModal} role="supply">
                           Borrow
-                        </button>
+                        </Button>
                       </td>
                     ) : (
                       <td>
-                        <button className="disabled-btn">Borrow</button>
+                        <Button role="disabled">Borrow</Button>
                       </td>
                     )}
                   </tr>
@@ -206,7 +208,6 @@ export default function page() {
           </div>
         </div>
 
-        {/* modals here */}
         <ReactModal
           isOpen={supplyModalIsOpen}
           onRequestClose={closeModal}
@@ -214,6 +215,7 @@ export default function page() {
         >
           <Supply close={closeModal} />
         </ReactModal>
+
         <ReactModal
           isOpen={claimModalIsOpen}
           onRequestClose={closeModal}
@@ -221,6 +223,7 @@ export default function page() {
         >
           <Claim close={closeModal} />
         </ReactModal>
+
         <ReactModal
           isOpen={borrowModalIsOpen}
           onRequestClose={closeModal}

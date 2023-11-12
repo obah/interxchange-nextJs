@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Button from "./button";
 
 export default function Header({ show }) {
   const [wallet, setWallet] = useState("connect");
@@ -34,9 +35,10 @@ export default function Header({ show }) {
           >
             InterXchange
           </Link>
-          <button onClick={handleConnect} className="primary-btn">
+
+          <Button role="primary" handler={handleConnect}>
             {wallet}
-          </button>
+          </Button>
         </div>
         <div>
           <nav className="mx-auto flex w-full flex-col items-center gap-12 lg:w-2/3 lg:flex-row lg:justify-between lg:gap-20">
@@ -48,18 +50,21 @@ export default function Header({ show }) {
             >
               Dashboard
             </Link>
+
             <Link
               href={"/market"}
               className={path.includes("/market") ? activeLink : inactiveLink}
             >
               Market
             </Link>
+
             <Link
               href={"/pool"}
               className={path.includes("/pool") ? activeLink : inactiveLink}
             >
               Pool
             </Link>
+
             <Link
               href={"/stake"}
               className={path.includes("/stake") ? activeLink : inactiveLink}

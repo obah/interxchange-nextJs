@@ -18,21 +18,12 @@ body {
   overflow-x: hidden;
 }
 
-h3 {
-  @apply text-lg font-bold sm:text-2xl;
-}
-
 ::selection {
   @apply bg-yellow-200 text-black;
 }
 
-.primary-btn {
-  @apply rounded-lg bg-yellow-200 px-6 py-4 text-lg  font-bold text-black hover:rounded-full hover:bg-yellow-300 sm:text-2xl lg:px-16;
-  @apply transition-all delay-75 ease-in-out;
-}
-
 .table-box {
-  @apply rounded-3xl border p-3 lg:border-2 lg:p-5;
+  @apply mb-5 rounded-3xl border p-3 md:mb-7 lg:mb-10 lg:border-2 lg:p-5;
 }
 
 .table-box h1 {
@@ -49,20 +40,4 @@ h3 {
 
 .table-box thead {
   @apply text-xs font-normal;
-}
-
-.supply-btn {
-  @apply rounded-3xl bg-yellow-300 px-4 py-2 text-black hover:bg-yellow-200;
-}
-
-.claim-btn {
-  @apply rounded-3xl bg-white px-6 py-2 text-black hover:bg-gray-300;
-}
-
-.disabled-btn {
-  @apply rounded-3xl bg-yellow-100 px-4 py-2 text-black hover:cursor-not-allowed;
-}
-
-.back-btn {
-  @apply rounded-full bg-black p-3;
 }

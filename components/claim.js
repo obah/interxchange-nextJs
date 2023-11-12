@@ -3,6 +3,7 @@ import backArrow from "@/images/back-arrow.png";
 import bayc from "@/images/bayc.png";
 import eth from "@/images/eth.png";
 import usdc from "@/images/usdc.png";
+import Button from "./button";
 
 export default function Claim({ close }) {
   const h2Style = "font-light lg:text-2xl text-lg mb-2 text-center";
@@ -12,19 +13,23 @@ export default function Claim({ close }) {
   return (
     <div>
       <div className="mb-3 flex justify-between md:mb-7">
-        <button onClick={close} className="back-btn">
+        <Button handler={close} role="back">
           <Image src={backArrow} alt="" />
-        </button>
+        </Button>
+
         <h1 className="hidden text-3xl font-bold md:block md:text-center">
           Claim
         </h1>
+
         <h2 className={h2Style}>ETH/USDC</h2>
       </div>
+
       <div className="my-10 flex justify-center gap-5 sm:gap-10 md:my-36">
         <div className="flex flex-col items-center">
           <Image src={bayc} alt="" width={80} height={80} />
           <p className={h2Style}>BAYC</p>
         </div>
+
         <div className="flex w-1/2 flex-wrap gap-3 sm:gap-8">
           <div className={mifp}>
             <h2 className={h2Style}>Worth</h2>
@@ -33,6 +38,7 @@ export default function Claim({ close }) {
               <p className={pStyle}>64.9</p>
             </div>
           </div>
+
           <div className={mifp}>
             <h2 className={h2Style}>Borrowed</h2>
             <div className="flex gap-2">
@@ -40,12 +46,14 @@ export default function Claim({ close }) {
               <p className={pStyle}>96,000</p>
             </div>
           </div>
+
           <div>
             <div>
               <h2 className={h2Style}>APY</h2>
               <p className={pStyle}>7.5%</p>
             </div>
           </div>
+
           <div className={mifp}>
             <h2 className={h2Style}>Amount owed</h2>
             <div className="flex gap-2">
@@ -53,12 +61,14 @@ export default function Claim({ close }) {
               <p className={pStyle + " text-yellow-200"}>103,200</p>
             </div>
           </div>
+
           <div>
             <div>
               <h2 className={h2Style}>Duration</h2>
               <p className={pStyle}>365 Days</p>
             </div>
           </div>
+
           <div>
             <div>
               <h2 className={h2Style}>Due Duration</h2>
@@ -67,10 +77,11 @@ export default function Claim({ close }) {
           </div>
         </div>
       </div>
+
       <div className="flex justify-center">
-        <button onClick={close} className="claim-btn font-semibold">
+        <Button handler={close} role="claim" className="font-semibold">
           Claim
-        </button>
+        </Button>
       </div>
     </div>
   );

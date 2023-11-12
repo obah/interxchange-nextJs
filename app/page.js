@@ -12,6 +12,7 @@ import { useState } from "react";
 import Card from "@/components/card";
 import { cardItems } from "@/lib/tableData";
 import Center from "@/components/center";
+import Button from "@/components/button";
 
 export default function Home() {
   const [chain, setChain] = useState("Blockchain");
@@ -77,9 +78,9 @@ export default function Home() {
                   className="absolute top-40 z-0 h-60  w-60 brightness-75 sm:top-12 lg:hidden"
                 />
 
-                <Link href="/dashboard" className="primary-btn">
+                <Button role="primary" url="/dashboard">
                   Launch App
-                </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -110,6 +111,7 @@ export default function Home() {
               options={chainOptions}
               onClick={handleChainChange}
             />
+
             <Dropdown
               label={filter}
               options={filterOptions}
@@ -132,7 +134,7 @@ export default function Home() {
           </div>
 
           <div className="mb-20 mt-12 flex w-full justify-center lg:mb-36 lg:mt-16">
-            <button className="primary-btn">Load more</button>
+            <Button role="primary">Load more</Button>
           </div>
         </section>
       </main>
