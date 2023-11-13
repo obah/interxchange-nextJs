@@ -4,13 +4,20 @@ import Image from "next/image";
 import Currency from "@/images/currency.png";
 import Dropdown from "@/components/dropdown";
 import { useState } from "react";
-import { supplyData, borrowData } from "@/lib/tableData";
+import {
+  supplyData,
+  borrowData,
+  supplyHeadData,
+  borrowHeadData,
+} from "@/lib/tableData";
 import ReactModal from "react-modal";
 import Supply from "@/components/supply";
 import Claim from "@/components/claim";
 import Borrow from "@/components/borrow";
 import Center from "@/components/center";
 import Button from "@/components/button";
+import TopBar from "@/components/topBar";
+import Table from "@/components/table";
 
 // Modal.setAppElement("#root");
 
@@ -57,7 +64,6 @@ export default function page() {
   return (
     <Center>
       <div className="mt-10 px-4 lg:px-32">
-        {/* stats section */}
         <div className="flex w-auto items-center justify-between">
           <div className="-mt-10 flex items-center justify-between gap-3 lg:-mt-20">
             <div className="flex h-10 items-center gap-2 lg:h-14 lg:gap-5">
@@ -66,6 +72,7 @@ export default function page() {
                 <h1 className="text-lg lg:text-center lg:text-2xl">
                   Net Worth
                 </h1>
+
                 <p className="text-xl font-bold text-yellow-300 lg:text-center lg:text-3xl">
                   $100,000
                 </p>
@@ -76,6 +83,7 @@ export default function page() {
               <h1 className="text-normal lg:text-center lg:text-2xl">
                 Net APY
               </h1>
+
               <p className="text-xl font-bold text-yellow-300 lg:text-center lg:text-3xl">
                 --
               </p>
@@ -91,121 +99,28 @@ export default function page() {
           </div>
         </div>
 
-        {/* this 2 can be 1 component */}
         <div className="flex flex-col justify-center gap-10 py-10 lg:flex-row">
-          <div className="w-full rounded-3xl border p-5 lg:w-[512px] lg:min-w-[480px] lg:border-2">
-            <h1 className="mb-5 text-lg font-bold lg:mb-10 lg:text-center lg:text-3xl">
-              Your supplies
-            </h1>
-            <p className="text-sm font-light lg:text-center lg:text-2xl">
-              Nothing supplied yet
-            </p>
-          </div>
-
-          <div className="w-full rounded-3xl border p-5 lg:w-[512px] lg:min-w-[480px] lg:border-2">
-            <h1 className="mb-5 text-lg font-bold lg:mb-10 lg:text-center lg:text-3xl">
-              Your borrows
-            </h1>
-            <p className="text-sm font-light lg:text-center lg:text-2xl">
-              Nothing borrowed yet
-            </p>
-          </div>
+          <TopBar heading="Your supplies" body="Nothing supplied yet" />
+          <TopBar heading="Your borrows" body="Nothing borrowed yet" />
         </div>
 
         <div className="flex flex-col justify-center gap-10 lg:flex-row">
-          <div className="table-box w-full lg:w-[512px]">
-            <h1 className="lg:text-center">Assets to supply</h1>
+          <Table
+            type="supply"
+            heading="Assets to supply"
+            headData={supplyHeadData}
+            tableData={supplyData}
+            handler1={openSupplyModal}
+            handler2={openClaimModal}
+          />
 
-            <table>
-              <thead>
-                <tr>
-                  <td>Assets</td>
-                  <td>Worth</td>
-                  <td>APY</td>
-                  <td>Supported collateral</td>
-                  <td></td>
-                </tr>
-              </thead>
-
-              <tbody>
-                {supplyData.map((data) => (
-                  <tr key={data.asset}>
-                    <td>
-                      <div>
-                        <Image src={data.logo()} alt="" />
-                        <p className="lg:text-center">{data.asset}</p>
-                      </div>
-                    </td>
-                    <td>{data.worth}</td>
-                    <td>{data.apy}</td>
-                    <td>
-                      <Image src={data.collateral()} alt="" />
-                    </td>
-
-                    {data.button === "Supply" && !data.disbled ? (
-                      <td>
-                        <Button role="supply" handler={openSupplyModal}>
-                          {data.button}
-                        </Button>
-                      </td>
-                    ) : data.button === "Claim" ? (
-                      <td>
-                        <Button handler={openClaimModal} role="claim">
-                          {data.button}
-                        </Button>
-                      </td>
-                    ) : (
-                      <td>
-                        <Button role="disabled">{data.button}</Button>
-                      </td>
-                    )}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="table-box w-full lg:w-[512px]">
-            <h1 className="lg:text-center">Assets to borrow</h1>
-
-            <table>
-              <thead>
-                <tr>
-                  <td>Assets</td>
-                  <td>Available</td>
-                  <td>APY</td>
-                  <td>APY, stable</td>
-                  <td></td>
-                </tr>
-              </thead>
-
-              <tbody>
-                {borrowData.map((data) => (
-                  <tr key={data.asset}>
-                    <td>
-                      <div>
-                        <Image src={data.logo()} alt="" />
-                        <p className="lg:text-center">{data.asset}</p>
-                      </div>
-                    </td>
-                    <td>{data.available}</td>
-                    <td>{data.apy}</td>
-                    <td>{data.stable}</td>
-                    {data.button === "enabled" ? (
-                      <td>
-                        <Button handler={openBorrowModal} role="supply">
-                          Borrow
-                        </Button>
-                      </td>
-                    ) : (
-                      <td>
-                        <Button role="disabled">Borrow</Button>
-                      </td>
-                    )}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <Table
+            type="borrow"
+            heading="Assets to borrow"
+            headData={borrowHeadData}
+            tableData={borrowData}
+            handler1={openBorrowModal}
+          />
         </div>
 
         <ReactModal
