@@ -15,7 +15,7 @@ export default function page() {
   return (
     <Center>
       <div className="m-5 h-screen lg:m-32 lg:mt-20">
-        <div className="mb-24 flex items-center justify-between lg:mb-10">
+        <div className=" mb-24 flex items-center justify-between lg:mb-10">
           <h1 className="-mt-2 ml-4 px-0 text-4xl font-black text-yellow-200 lg:ml-24 lg:text-center">
             Staking
           </h1>

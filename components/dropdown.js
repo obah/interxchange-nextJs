@@ -20,11 +20,12 @@ export default function Dropdown({ label, options, onClick }) {
   const openedDrop = closedDrop + " hidden";
 
   return (
-    <div className=" mb-8 flex w-44 flex-col lg:mb-14 lg:w-80">
+    <div className=" relative mb-8 flex w-44 flex-col lg:mb-14 lg:w-80">
       <div className="flex h-14 w-full items-center justify-between border-2 p-3  lg:h-16">
         <p className="text-lg font-normal lg:text-center lg:text-2xl">
           {label}
         </p>
+
         <button onClick={handleDropdown} className="rounded-full bg-black p-2">
           <Image
             src={Arrow}
@@ -36,7 +37,8 @@ export default function Dropdown({ label, options, onClick }) {
           />
         </button>
       </div>
-      <div className="w-full border-2  border-t-0 bg-black ">
+
+      <div className="absolute top-14 z-10 w-full border-2 border-t-0 bg-black lg:top-16">
         {options.map((option) => (
           <button
             value={option}

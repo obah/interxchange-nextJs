@@ -2,29 +2,38 @@ import Button from "./button";
 import Image from "next/image";
 
 function Table({ headData, tableData, heading, type, handler1, handler2 }) {
+  const tdStyle =
+    "w-full px-1 py-2 text-xs sm:px-2 sm:py-3 lg:px-4 lg:py-5 lg:text-sm";
+
   return (
     <div
-      className={`table-box ${
-        type === "market" ? "w-auto sm:w-5/6" : "w-full lg:w-[512px]"
+      className={`mb-5 rounded-3xl border p-3 md:mb-7 lg:mb-10 lg:border-2 lg:p-5 ${
+        type === "market" ? " w-auto sm:w-5/6" : " w-full lg:w-[512px]"
       } `}
     >
-      <h1 className="lg:text-center">{heading}</h1>
+      <h1 className="mb-3 text-xl font-bold lg:mb-7 lg:text-center lg:text-3xl">
+        {heading}
+      </h1>
 
       <table>
-        <thead>
+        <thead className="text-xs font-normal">
           <tr>
             {headData.map((data) => (
-              <td key={data}>{data}</td>
+              <td className={tdStyle} key={data}>
+                {data}
+              </td>
             ))}
-            <td></td>
+            <td className={tdStyle}></td>
           </tr>
         </thead>
 
         <tbody>
           {tableData.map((data) => (
-            <tr key={data.asset}>
-              <td>
-                <div>
+            <tr key={data.asset} className="border-t">
+              <td
+                className={tdStyle + (type === "market" && " flex items-start")}
+              >
+                <div className="flex flex-col items-center justify-between">
                   <Image src={data.logo()} alt="" />
                   <p className="md:text-center">{data.asset}</p>
                 </div>
@@ -32,26 +41,26 @@ function Table({ headData, tableData, heading, type, handler1, handler2 }) {
 
               {type === "supply" && (
                 <>
-                  <td>{data.worth}</td>
-                  <td>{data.apy}</td>
-                  <td>
+                  <td className={tdStyle}>{data.worth}</td>
+                  <td className={tdStyle}>{data.apy}</td>
+                  <td className={tdStyle}>
                     <Image src={data.collateral()} alt="" />
                   </td>
 
                   {data.button === "Supply" && !data.disbled ? (
-                    <td>
+                    <td className={tdStyle}>
                       <Button role="supply" handler={handler1}>
                         {data.button}
                       </Button>
                     </td>
                   ) : data.button === "Claim" ? (
-                    <td>
+                    <td className={tdStyle}>
                       <Button handler={handler2} role="claim">
                         {data.button}
                       </Button>
                     </td>
                   ) : (
-                    <td>
+                    <td className={tdStyle}>
                       <Button role="disabled">{data.button}</Button>
                     </td>
                   )}
@@ -60,17 +69,17 @@ function Table({ headData, tableData, heading, type, handler1, handler2 }) {
 
               {type === "borrow" && (
                 <>
-                  <td>{data.available}</td>
-                  <td>{data.apy}</td>
-                  <td>{data.stable}</td>
+                  <td className={tdStyle}>{data.available}</td>
+                  <td className={tdStyle}>{data.apy}</td>
+                  <td className={tdStyle}>{data.stable}</td>
                   {data.button === "enabled" ? (
-                    <td>
+                    <td className={tdStyle}>
                       <Button handler={handler1} role="supply">
                         Borrow
                       </Button>
                     </td>
                   ) : (
-                    <td>
+                    <td className={tdStyle}>
                       <Button role="disabled">Borrow</Button>
                     </td>
                   )}
@@ -79,12 +88,12 @@ function Table({ headData, tableData, heading, type, handler1, handler2 }) {
 
               {type === "market" && (
                 <>
-                  <td>{data.pool}</td>
-                  <td>{data.supply_apy}</td>
-                  <td>{data.borrowed}</td>
-                  <td>{data.variable_apy}</td>
-                  <td>{data.stable_apy}</td>
-                  <td>
+                  <td className={tdStyle}>{data.pool}</td>
+                  <td className={tdStyle}>{data.supply_apy}</td>
+                  <td className={tdStyle}>{data.borrowed}</td>
+                  <td className={tdStyle}>{data.variable_apy}</td>
+                  <td className={tdStyle}>{data.stable_apy}</td>
+                  <td className={tdStyle}>
                     <Button
                       url={data.pageUrl}
                       role="supply"

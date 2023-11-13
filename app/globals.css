@@ -21,23 +21,3 @@ body {
 ::selection {
   @apply bg-yellow-200 text-black;
 }
-
-.table-box {
-  @apply mb-5 rounded-3xl border p-3 md:mb-7 lg:mb-10 lg:border-2 lg:p-5;
-}
-
-.table-box h1 {
-  @apply mb-3 text-xl font-bold lg:mb-7 lg:text-3xl;
-}
-
-.table-box tbody tr {
-  @apply border-t;
-}
-
-.table-box tr td {
-  @apply w-full px-1 py-2 text-xs sm:px-2 sm:py-3 lg:px-4 lg:py-5 lg:text-sm;
-}
-
-.table-box thead {
-  @apply text-xs font-normal;
-}
